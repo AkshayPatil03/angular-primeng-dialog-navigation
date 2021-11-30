@@ -1,0 +1,39 @@
+<h5 tabindex="0" autofocus>Basic Example</h5>
+<p-button
+  (click)="showBasicDialog()"
+  icon="pi pi-external-link"
+  label="Show"
+></p-button>
+<br /><br />
+
+<p-button
+  (click)="closeBasicDialog()"
+  icon="pi pi-external-link"
+  label="Close"
+></p-button>
+<p-dialog
+  [(visible)]="displayBasic"
+  [style]="{ width: '50vw', border: '2px solid black' }"
+  [baseZIndex]="10000"
+  appendTo="body"
+  styleClass="generic-dialog"
+  [focusTrap]="false"
+  [closable]="false"
+>
+  <p-header tabindex="0" autofocus>HEADER</p-header>
+  <ag-grid-angular
+    style="width: 500px; height: 350px;"
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+  >
+  </ag-grid-angular>
+  <p-footer
+    ><p-button
+      (click)="closeBasicDialog()"
+      icon="pi pi-external-link"
+      label="Cancel"
+    ></p-button
+  ></p-footer>
+</p-dialog>
